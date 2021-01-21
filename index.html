@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <script>
+            function createAddition(){
+                let number = 0;
+                return function (val){
+                    return  number = number + val;
+                }
+            }
+
+            let addition = createAddition();
+
+            console.log(addition(3));
+            console.log(addition(2));
+            console.log(addition(10));
+
+            function createCounter(start, step){
+                let count = start ;
+
+                return function (reset){
+
+                    if (reset == 'reset') {
+                        
+                       return count = start;
+                        
+                    } else{
+                        
+                        let stepVal = step;
+                        return count = count + stepVal;
+                        
+                    }
+
+                }
+            }
+
+            let result = createCounter(2,3);
+
+            console.log(result());
+            console.log(result());
+            
+            console.log(result('reset'));
+
+
+
+        </script>
+
+    </body>
+</html>
